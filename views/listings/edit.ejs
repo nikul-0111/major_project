@@ -1,0 +1,106 @@
+<% layout("/layouts/boilerplate") -%>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: 
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                url("https://in.images.search.yahoo.com/images/view;_ylt=Awr1QZw0T2NobWkQDFu9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzBmZThjZTYwMGMxY2RmNjEyMGRjYjM0ZThjZTU0YzQxBGdwb3MDNjIEaXQDYmluZw--?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dgive%2Bgood%2Bhotel%2Bpic%2Bwhich%2Bcan%2Bi%2Bput%2Bbehind%2Bthe%2Bcreate%2Broute%26type%3DE210IN826G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26nost%3D1%26tab%3Dorganic%26ri%3D62&w=150&h=150&imgurl=oss.gooood.cn%2Fuploads%2F2023%2F02%2F005-good-hotel-guatemala-city-by-ninetynine-150x150.jpg&rurl=https%3A%2F%2Fwww.gooood.cn%2Fgood-hotel-guatemala-city-by-ninetynine.htm&size=16KB&p=give+good+hotel+pic+which+can+i+put+behind+the+create+route&oid=0fe8ce600c1cdf6120dcb34e8ce54c41&fr2=piv-web&fr=mcafee&tt=Good+Hotel+Guatemala+City+by+Ninetynine+-+%E8%B0%B7%E5%BE%B7%E8%AE%BE%E8%AE%A1%E7%BD%91&b=61&ni=21&no=62&ts=&tab=organic&sigr=ushGky76J5jq&sigb=aW_SkkANv0wh&sigi=2p_FkNj7nOw4&sigt=RdndzUy9CFaH&.crumb=wdr/ROmHuUJ&fr=mcafee&fr2=piv-web&type=E210IN826G0");
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            max-width: 420px;
+            margin: 48px auto;
+            background: #f8fafc; /* Very light blue/gray for subtle contrast */
+            border-radius: 16px;
+            box-shadow: 0 6px 32px rgba(44, 62, 80, 0.10);
+            padding: 36px 32px 28px 32px;
+        }
+        h2 {
+            text-align: center;
+            color: #1976d2;
+            margin-bottom: 28px;
+            letter-spacing: 1px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 11px;
+            margin-bottom: 18px;
+            border: 1.5px solid #b2bec3;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #f4f8fb;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            border: 1.5px solid #1976d2;
+            outline: none;
+            background: #e3f2fd;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+        button {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(90deg, #1976d2 60%, #64b5f6 100%);
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+        }
+        button:hover {
+            background: linear-gradient(90deg, #1565c0 60%, #42a5f5 100%);
+            box-shadow: 0 4px 16px rgba(25, 118, 210, 0.16);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>edit a Listing</h2>
+        <form action="/listings/<%= listing._id %>?_method=PUT" method="POST">
+            <div style="margin-bottom: 18px;">
+                <label for="tital">Title</label>
+                <input type="text" id="tital" name="tital" value="<%= listing.tital %>" required>
+            </div>
+            <div style="margin-bottom: 18px;">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" required><%= listing.description %>  </textarea>
+            </div>
+            <div style="margin-bottom: 18px;">
+                <label for="price">Price (₹/night)</label>
+                <input type="number" id="price" name="price" value="<%= listing.price %>" required>
+            </div>
+            <div style="margin-bottom: 18px;">
+                <label for="image">Image URL</label>
+                <input type="text" id="image" name="image" value="<%= listing.image %>" required>
+            </div>
+            <div style="margin-bottom: 18px;">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" value="<%= listing.location %>" required>
+            </div>
+            <div style="margin-bottom: 24px;">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" value="<%= listing.country %>" required>
+            </div>
+            <button type="submit">Edit Listing</button>
+        </form>
+    </div>
+</body>
+</html>

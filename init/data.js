@@ -1,0 +1,138 @@
+let sampleListings = [
+    {
+        tital: "Seaside Villa",
+        description: "A beautiful villa by the beach.",
+        price: 2500,
+        location: "Goa",
+        country: "India",
+        image: "https://images.pexels.com/photos/7546280/pexels-photo-7546280.jpeg?cs=srgb&dl=pexels-max-rahubovskiy-7546280.jpg&fm=jpg",
+    },
+    {
+        tital: "Mountain Retreat",
+        description: "Cozy retreat in the mountains.",
+        price: 1800,
+        location: "Manali",
+        country: "India",
+        image: "https://hotelsforgays.com/wp-content/uploads/2025/06/meininger-hotel-hotels-for-gays-dresden-6.jpg",
+    },
+    {
+        tital: "City Hotel",
+        description: "Modern hotel in the heart of the city.",
+        price: 3200,
+        location: "Mumbai",
+        country: "India",
+        image: "https://images.travelandleisureasia.com/wp-content/uploads/sites/3/2025/06/12190547/Luxury-Awards-2025_LAOS-Amantaka-1024x1024.jpg?tr=w-1920",
+    },
+    {
+        tital: "Desert Resort",
+        description: "Experience luxury in the desert.",
+        price: 2100,
+        location: "Jaisalmer",
+        country: "India",
+        image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
+    },
+    {
+        tital: "Lakeview Palace",
+        description: "A palace with stunning lake views.",
+        price: 4000,
+        location: "Udaipur",
+        country: "India",
+        image: "https://tse2.mm.bing.net/th/id/OIP.uQZNNBv07uAus2pSo7it8AHaEK?pid=Api&P=0&h=180",
+    },
+    {
+        tital: "Forest Hideaway",
+        description: "Hidden gem in the forest.",
+        price: 1700,
+        location: "Wayanad",
+        country: "India",
+        image: "https://tse1.mm.bing.net/th/id/OIP.qy6P6tJ0GC1gqcCZv7vhfQHaEo?pid=Api&P=0&h=180",
+    },
+    {
+        tital: "Royal Heritage",
+        description: "Live like royalty in this heritage hotel.",
+        price: 3500,
+        location: "Jaipur",
+        country: "India",
+        image: "https://tse3.mm.bing.net/th/id/OIP.g5Kw4jETUs7bzJLwLnwRswHaE8?pid=Api&P=0&h=180",
+    },
+    {
+        tital: "Tea Garden Resort",
+        description: "Surrounded by lush tea gardens.",
+        price: 2200,
+        location: "Darjeeling",
+        country: "India",
+        image: "https://media.cntraveler.com/photos/643eb653c4daa172f25ef3b9/16:9/w_2560,c_limit/Virgin%20Hotel%20NY_VHNY-EVERDENE-DAY.jpg",
+    },
+    {
+        tital: "Island Paradise",
+        description: "A paradise on a private island.",
+        price: 6000,
+        location: "Andaman",
+        country: "India",
+    
+        image: "https://image.slidesdocs.com/responsive-images/background/gold-restaurant-hotel-room-box-dining-table-powerpoint-background_4c81083fd3__960_540.jpg",
+    },
+    {
+        tital: "Urban Comfort",
+        description: "Comfortable stay in the city center.",
+        price: 2800,
+        location: "Delhi",
+        country: "India",
+        image: "https://tse1.mm.bing.net/th/id/OIP.5zCo-HHIXqBwQbMRvsY3hQHaEK?pid=Api&P=0&h=180",
+    },
+    {
+        tital: "Hilltop Haven",
+        description: "A haven on the hilltop with great views.",
+        price: 2600,
+        location: "Shimla",
+        country: "India",
+        image:"https://tse1.mm.bing.net/th/id/OIP.xheEfrqwXwuypBxs3u8iqwHaFD?pid=Api&P=0&h=180",
+    },
+    {
+        tital: "Riverfront Lodge",
+        description: "Lodge by the river with serene views.",
+        price: 1900,
+        location: "Rishikesh",
+        country: "India",
+        image: "https://toohotel.com/wp-content/uploads/2022/09/TOO_Hotel_Suite_Bathroom_Panoramique.jpg",
+    },
+    {
+        tital: "Safari Camp",
+        description: "Luxury tents in the wild.",
+        price: 2300,
+        location: "Ranthambore",
+        country: "India",
+        image: "https://tse1.mm.bing.net/th/id/OIP.zSJJWpKWwcWFjGqweo-c4wHaEo?pid=Api&P=0&h=180",
+    },
+   
+    {
+        tital: "Beachside Bungalow",
+        description: "Bungalow right on the beach.",
+        price: 2700,
+        location: "Pondicherry",
+        country: "India",
+        image:"https://wallpapercave.com/wp/wp3598848.jpg",
+    },
+
+    
+    {
+        tital: "Luxury Spa Retreat",
+        description: "Pamper yourself at this spa retreat.",
+        price: 5000,
+        location: "Kerala",
+        country: "India",
+        image: "http://images.huffingtonpost.com/2014-05-09-HuffPo_hotelrestaurants_1.jpeg",
+    },
+    {
+        tital: "good Spa Retreat",
+        description: "Pamper yourself at this spa retreat.",
+        price: 6000,
+        location: "gujrat",
+        country: "India",
+        image: "https://tse3.mm.bing.net/th/id/OIP.kmnahKGwH5Czc4kSGuTWpwHaEK?pid=Api&P=0&h=180",
+    },
+    
+   
+];
+
+module.exports = {data :sampleListings};

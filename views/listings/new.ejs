@@ -1,0 +1,137 @@
+<% layout("/layouts/boilerplate") -%>
+    <title>Create New Listing</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fff;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            max-width: 440px;
+            margin: 56px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+            padding: 40px 36px 32px 36px;
+        }
+        h2 {
+            text-align: center;
+            color: #7b3f00;
+            margin-bottom: 32px;
+            letter-spacing: 1px;
+            font-size: 2em;
+        }
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+            color: #4e342e;
+            letter-spacing: 0.5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1.5px solid #a9744f;
+            border-radius: 7px;
+            font-size: 1em;
+            background: #fbeee0;
+            transition: border 0.2s, background 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            border: 1.5px solid #7b3f00;
+            outline: none;
+            background: #f3e1c7;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #7b3f00 60%, #a9744f 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.15em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(123, 63, 0, 0.10);
+            margin-top: 10px;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #5d2e00 60%, #8d5c2c 100%);
+            box-shadow: 0 4px 16px rgba(123, 63, 0, 0.18);
+        }
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 22px 8px 18px 8px;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="mb-4">Create New Hotel Listing</h2>
+        <form action="/listings" method="POST" autocomplete="off" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="tital" class="form-label">Title</label>
+                <input type="text" id="tital" name="tital" class="form-control" placeholder="e.g. Seaside Villa" required>
+                <div class="invalid-feedback">Please enter a title.</div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea id="description" name="description" class="form-control" placeholder="Describe your hotel..." required></textarea>
+                <div class="invalid-feedback">Please enter a description.</div>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price (₹/night)</label>
+                <input type="number" id="price" name="price" class="form-control" min="0" placeholder="e.g. 2500" required>
+                <div class="invalid-feedback">Please enter a valid price.</div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image URL</label>
+                <input type="text" id="image" name="image" class="form-control" placeholder="https://example.com/hotel.jpg">
+                <div class="invalid-feedback">Please enter a valid image URL.</div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" id="location" name="location" class="form-control" placeholder="e.g. Goa" required>
+                <div class="invalid-feedback">Please enter a location.</div>
+            </div>
+            <div class="mb-4">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" id="country" name="country" class="form-control" placeholder="e.g. India" required>
+                <div class="invalid-feedback">Please enter a country.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-2 fs-5">Create Listing</button>
+        </form>
+    </div>
+    <script>
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+</script>
+</body>
+</html>
