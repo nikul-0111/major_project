@@ -64,29 +64,45 @@ app.get("/listings", async (req, res) => {
 // show routes
 app.get("/listings/:id", async (req, res) => {
     let { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send("Listing not found");
+    }
     const listing = await Listing.findById(id);
+    if (!listing) {
+        return res.status(404).send("Listing not found");
+    }
     res.render("listings/show", { listing });
 });
 
 // edit routes
 app.get("/listings/:id/edit", async (req, res) => {
     const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send("Listing not found");
+    }
     const listing = await Listing.findById(id);
+    if (!listing) {
+        return res.status(404).send("Listing not found");
+    }
     res.render("listings/edit", { listing });
 });
-app.delete("/listings/:id",async(req,res)=>
-{ 
-    let{id} = req.params;
-    let deletedlisting = await Listing.findByIdAndDelete(id);
+app.delete("/listings/:id", async (req, res) => {
+    let { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send("Listing not found");
+    }
+    await Listing.findByIdAndDelete(id);
     res.redirect("/listings");
 });
 
 
 // update route
 
-app.put("/listings/:id",async(req,res)=>
-{
-    let{id}=req.params;
+app.put("/listings/:id", async (req, res) => {
+    let { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send("Listing not found");
+    }
     await Listing.findByIdAndUpdate(id, {
         tital: req.body.tital,
         description: req.body.description,
@@ -95,7 +111,7 @@ app.put("/listings/:id",async(req,res)=>
         location: req.body.location,
         country: req.body.country
     });
-   res.redirect("/listings");
+    res.redirect("/listings");
 });
 
 
